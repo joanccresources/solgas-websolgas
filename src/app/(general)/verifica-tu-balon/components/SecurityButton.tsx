@@ -8,11 +8,12 @@ interface SecurityButtonProps
 
 export default function SecurityButton({
   className,
-  href = "#0",
+  href = "https://www.expertasolgas.com.pe/",
   ...props
 }: SecurityButtonProps) {
   return (
     <a
+      target="_blank"
       href={href}
       className={clsx(
         "inline-flex items-center gap-2 bg-primary-blue text-white pl-10 lg:pl-12 | pr-6 py-1.5 rounded-full font-clan-pro-medium | text-[13px] lg:text-[17px] hover:opacity-90 transition relative",
