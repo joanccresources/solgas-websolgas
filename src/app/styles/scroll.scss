@@ -1,0 +1,33 @@
+.list-jobs::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+/* Webkit/Blink (Chrome, Safari, Edge) */
+.list-jobs::-webkit-scrollbar {
+    width: 8px;
+}
+
+.list-jobs::-webkit-scrollbar-thumb {
+    background-color: var(--scroll);
+    border-radius: 2px;
+}
+  
+
+.list-jobs { 
+    z-index: 100;
+}
+
+/*
+os-theme-minimal-light
+*/
+.os-theme-dark, .os-theme-light {
+    box-sizing: border-box;
+    --os-size: 13px !important;
+}
+
+[data-overlayscrollbars-viewport] {
+    overflow: visible !important; /* Permite que el contenido se muestre */
+    display: block; /* Asegúrate de que no cambie a inline */
+    max-height: inherit; /* Mantén el tamaño correcto */
+  }

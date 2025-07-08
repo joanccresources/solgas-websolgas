@@ -1,0 +1,84 @@
+export default function MiniLogo({width, height}: {width: string, height: string}) {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 34 34"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M17.2644 19.9622C13.3066 29.819 7.76774 29.5995 3.51416 27.2581C8.74699 34.3763 18.5598 36.1219 25.8531 31.0838C32.9016 26.2129 35.0641 16.7428 31.188 9.20653C30.8921 8.64209 29.6069 7.21008 27.5158 7.21008C24.7821 7.23099 21.2425 10.0427 17.2542 19.9622"
+        fill="#FF5100"
+      />
+      <path
+        d="M17.2644 19.9622C13.3066 29.819 7.76774 29.5995 3.51416 27.2581C8.74699 34.3763 18.5598 36.1219 25.8531 31.0838C32.9016 26.2129 35.0641 16.7428 31.188 9.20653C30.8921 8.64209 29.6069 7.21008 27.5158 7.21008C24.7821 7.23099 21.2425 10.0427 17.2542 19.9622"
+        fill="url(#paint0_linear_616_2070)"
+        fillOpacity="0.7"
+      />
+      <path
+        d="M17.2644 19.9622C13.3066 29.819 7.76774 29.5995 3.51416 27.2581C8.74699 34.3763 18.5598 36.1219 25.8531 31.0838C32.9016 26.2129 35.0641 16.7428 31.188 9.20653C30.8921 8.64209 29.6069 7.21008 27.5158 7.21008C24.7821 7.23099 21.2425 10.0427 17.2542 19.9622"
+        fill="url(#paint1_linear_616_2070)"
+        fillOpacity="0.7"
+      />
+      <path
+        d="M17.1304 6.19377C17.1304 6.19377 7.98065 11.1378 7.29722 11.5664C-4.32109 18.7264 3.34965 27.0676 3.34965 27.0676C1.56457 24.9771 2.70702 22.3953 4.45129 20.9946C6.7974 19.1236 11.2754 17.1272 13.3053 16.1969C17.9669 14.075 20.7618 9.9567 20.1702 3.78967C19.3235 4.74086 18.3035 5.55616 17.1304 6.19377Z"
+        fill="url(#paint2_linear_616_2070)"
+      />
+      <path
+        d="M0.280547 13.787C-0.015266 15.3758 -0.0662682 16.9541 0.076538 18.4906C2.87146 7.99623 13.1229 1.27522 23.7518 3.31347C25.088 3.57478 26.3631 3.95108 27.5769 4.44235C25.394 2.38319 22.6297 0.898922 19.488 0.292672C18.4679 0.0940733 17.4479 0 16.438 0C8.67551 0.0104526 1.75961 5.67575 0.280547 13.787Z"
+        fill="url(#paint3_linear_616_2070)"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_616_2070"
+          x1="28.726"
+          y1="1.00624"
+          x2="13.8464"
+          y2="37.2578"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#EAD436" stopOpacity="0" />
+          <stop offset="0.447966" stopColor="#EBD935" />
+          <stop offset="1" stopColor="#EAD436" stopOpacity="0" />
+        </linearGradient>
+        <linearGradient
+          id="paint1_linear_616_2070"
+          x1="14.4576"
+          y1="36.6012"
+          x2="16.5219"
+          y2="22.902"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#FF60B3" />
+          <stop offset="1" stopColor="#E51B84" stopOpacity="0" />
+        </linearGradient>
+        <linearGradient
+          id="paint2_linear_616_2070"
+          x1="2.35265"
+          y1="26.4144"
+          x2="20.7914"
+          y2="4.26798"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#2C6AA9" />
+          <stop offset="0.324667" stopColor="#1D91C9" />
+          <stop offset="0.692421" stopColor="#73AF4E" />
+          <stop offset="1" stopColor="#BBC235" />
+        </linearGradient>
+        <linearGradient
+          id="paint3_linear_616_2070"
+          x1="0.582563"
+          y1="16.6378"
+          x2="27.7772"
+          y2="4.24023"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#FD5170" />
+          <stop offset="0.723266" stopColor="#ECBF36" />
+          <stop offset="1" stopColor="#EDAE2E" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+}

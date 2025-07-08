@@ -1,0 +1,13 @@
+@use "./globals.css";
+@use "./background.scss";
+@use "./fonts.scss";
+@use "./scroll.scss";
+@use "./carousel.scss";
+@use "./photo-slider.scss";
+@use "./html.scss";
+@use "./tab.scss";
+@import "overlayscrollbars/overlayscrollbars.css";
+
+html {
+  scroll-behavior: smooth;
+}

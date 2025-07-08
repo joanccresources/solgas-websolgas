@@ -1,0 +1,102 @@
+@font-face {
+  font-family: "clan-pro-regular";
+  src: url("./clan-pro/FFClanProRegular.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "clan-pro-thin";
+  src: url("./clan-pro/FFClanProThin.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "clan-pro-bold";
+  src: url("./clan-pro/FFClanProBold.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "clan-pro-black";
+  src: url("./clan-pro/FFClanProBlk.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "clan-pro-medium";
+  src: url("./clan-pro/FFClanProMedium.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "clan-pro-italic";
+  src: url("./clan-pro/FFClanProItalic.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "clan-pro-bold-italic";
+  src: url("./clan-pro/FFClanProBoldIt.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "clan-pro-new";
+  src: url("./clan-pro/FFClanProRgNews.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "clan-pro-medium-italic";
+  src: url("./clan-pro/FFClanProMediumIt.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@for $i from 1 through 20 {
+  .line-clamp-#{$i} {
+    display: -webkit-box;
+    -webkit-line-clamp: $i;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    overflow-wrap: break-word;
+  }
+}
+
+.break-all {
+  word-break: break-all;
+}
+
+.div-benefits-html {
+  font-family: "clan-pro-medium", sans-serif;
+
+  strong {
+    font-family: "clan-pro-bold", sans-serif;
+    font-weight: bold;
+  }
+}
+
+.truncate-multi-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

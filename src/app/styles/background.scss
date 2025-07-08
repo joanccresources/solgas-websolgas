@@ -1,0 +1,36 @@
+.bg-header-one {
+  background-image: url("./../../../public/background/header-one.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 53.1px;
+  background-color: #212a5c;
+}
+
+.bg-header-two {
+  background-image: url("./../../../public/background/header-two.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 67px;
+}
+
+.bg-front-page {
+  background-image: url("./../../../public/background/front-page.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bg-front-page-orange {
+  background-image: url("./../../../public/background/front-page-orange-2.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+[data-scope="slider"][data-part="root"] {
+  display: flex;
+  flex-direction: column;
+}
+

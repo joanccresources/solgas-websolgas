@@ -1,0 +1,47 @@
+// src/app/(general)/verifica-tu-balon/components/SuccessModal.tsx
+"use client";
+
+import { Dialog } from "@radix-ui/react-dialog";
+import { X } from "lucide-react";
+import Image from "next/image";
+import SecurityButton from "./SecurityButton";
+
+export default function SuccessModal({ onClose }: { onClose: () => void }) {
+  return (
+    <Dialog open onOpenChange={onClose}>
+      <div className="fixed inset-0 bg-black/50 z-[999] flex items-center justify-center px-4 backdrop-blur-[6px]">
+        {/* overflow-y-auto */}
+        <div className="bg-white rounded-xl w-full max-w-md p-16 relative text-center max-h-screen scrollbar-custom">
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 text-gray-500 hover:text-black cursor-pointer"
+          >
+            <X size={24} className="text-primary-orange font-bold" />
+          </button>
+
+          <Image
+            src="/verifica-tu-balon/check-form.svg"
+            alt="Check"
+            width={177}
+            height={177}
+            className="mx-auto mb-4"
+          />
+
+          <h2 className="text-2xl font-clan-pro-bold text-primary-orange mb-2">
+            ¡Gracias!
+          </h2>
+          <p className="text-base text-primary-blue font-clan-pro-regular">
+            Te mantendremos al tanto de las <br />
+            <strong className="text-primary-blue">
+              promociones exclusivas de Solgas.
+            </strong>
+          </p>
+
+          <div className="absolute -bottom-3.5 w-full left-0 right-0">
+            <SecurityButton />
+          </div>
+        </div>
+      </div>
+    </Dialog>
+  );
+}
