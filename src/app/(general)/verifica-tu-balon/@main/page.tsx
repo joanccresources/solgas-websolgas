@@ -162,13 +162,29 @@ export default function VerificaTuBalon() {
           <div className="flex flex-col | lg:flex-row | items-center h-full">
             {/*  */}
             <div className="w-[312px] sm:w-sm md:w-md lg:w-1/2 | h-[185px] sm:h-[350px] lg:h-full | bg-gradient-to-r from-[#FF7900] to-[#082265] | rounded-tl-[35px] rounded-tr-[35px] lg:rounded-bl-[35px] lg:rounded-tr-none | relative">
-              <Image
+              {/* <Image
                 src="/verifica-tu-balon/verifica-tu-balon-main.webp"
                 alt="Verifica tu balón"
                 width={696}
                 height={570}
                 sizes="(max-width: 639px) 312px, 696px"
                 className="absolute bottom-0 lg:-bottom-[90px] min-w-[294px] lg:min-w-[606px] xl:min-w-[696px] z-40 right-[25px] lg:right-0 [mask-image:linear-gradient(to_right,transparent,black_2%)]"
+              /> */}
+              {/* right-[25px] lg:right-0 */}
+              {/* sizes="(max-width: 639px) 312px, 513px" */}
+              <Image
+                src="/verifica-tu-balon/verifica-tu-balon-main@2x.webp"
+                alt="Verifica tu balón"
+                width={513}
+                height={553}
+                className="absolute bottom-0 lg:-bottom-[90px] | min-w-[255px] sm:min-w-[312px] md:min-w-[366px] lg:min-w-[424px] xl:min-w-[513px] | w-[255px] sm:w-[312px] md:w-[366px] lg:w-[424px] xl:w-[513px] | left-0 | z-40 | hidden sm:block"
+              />
+              <Image
+                src="/verifica-tu-balon/verifica-tu-balon-main-mobile@2x.webp"
+                alt="Verifica tu balón"
+                width={237}
+                height={230}
+                className="absolute bottom-0 | w-[237px] | left-0 | z-40 | sm:hidden"
               />
             </div>
             {/* Formulario */}

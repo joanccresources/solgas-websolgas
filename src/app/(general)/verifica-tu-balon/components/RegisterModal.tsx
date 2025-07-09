@@ -17,8 +17,16 @@ const schema = z.object({
   nombre: z.string().min(4, "Campo requerido"),
   dni: z.string().min(8, "DNI inválido"),
   telefono: z.string().min(9, "Teléfono inválido"),
-  email: z.string().email("Correo inválido"),
-  direccion: z.string().min(4, "Campo requerido"),
+  // email: z.string().email("Correo inválido"),
+  // direccion: z.string().min(4, "Campo requerido"),
+  email: z
+    .string()
+    .optional()
+    .or(z.literal("").transform(() => undefined))
+    .refine((val) => !val || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val), {
+      message: "Correo inválido",
+    }),
+  direccion: z.string().optional(),
   ciudad: z.string().min(4, "Campo requerido"),
   acepto: z.literal(true, {
     errorMap: () => ({
@@ -64,8 +72,8 @@ export default function RegisterModal({ onClose }: { onClose: () => void }) {
         nombres_apellidos: data.nombre,
         documento_identidad: data.dni,
         telefono: data.telefono,
-        correo_electronico: data.email,
-        direccion: data.direccion,
+        correo_electronico: data.email || "",
+        direccion: data.direccion || "",
         ciudad: data.ciudad,
         acepto_politicas: true,
         dispositivo: getParsedDevice(),
@@ -140,7 +148,8 @@ export default function RegisterModal({ onClose }: { onClose: () => void }) {
   return (
     <Dialog open onOpenChange={onClose}>
       <div className="fixed inset-0 bg-black/50 z-[999] flex items-center justify-center px-4 backdrop-blur-[6px]">
-        <div className="bg-white rounded-xl w-full max-w-2xl p-6 relative max-h-screen overflow-y-auto scrollbar-custom">
+        {/* rounded-xl */}
+        <div className="bg-white rounded-[22px] w-full max-w-2xl p-6 relative max-h-screen overflow-y-auto scrollbar-custom">
           <button
             onClick={onClose}
             className="absolute top-4 right-4 text-gray-500 hover:text-black cursor-pointer"
@@ -225,7 +234,7 @@ export default function RegisterModal({ onClose }: { onClose: () => void }) {
                   className="block | text-sm md:text-[17px] | text-primary-blue font-clan-pro-bold"
                 >
                   4. Correo Electrónico{" "}
-                  <span className="text-primary-orange">*</span>
+                  {/* <span className="text-primary-orange">*</span> */}
                 </label>
                 <div className="mx-4 mt-3">
                   <input
@@ -246,7 +255,8 @@ export default function RegisterModal({ onClose }: { onClose: () => void }) {
                   htmlFor="registro-direccion"
                   className="block | text-sm md:text-[17px] | text-primary-blue font-clan-pro-bold"
                 >
-                  5. Dirección <span className="text-primary-orange">*</span>
+                  5. Dirección
+                  {/* <span className="text-primary-orange">*</span> */}
                 </label>
                 <div className="mx-4 mt-3">
                   <input

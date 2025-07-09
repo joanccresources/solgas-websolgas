@@ -10,8 +10,8 @@ export default function SuccessModal({ onClose }: { onClose: () => void }) {
   return (
     <Dialog open onOpenChange={onClose}>
       <div className="fixed inset-0 bg-black/50 z-[999] flex items-center justify-center px-4 backdrop-blur-[6px]">
-        {/* overflow-y-auto */}
-        <div className="bg-white rounded-xl w-full max-w-md p-16 relative text-center max-h-screen scrollbar-custom">
+        {/* overflow-y-auto rounded-xl */}
+        <div className="bg-white rounded-[22px] w-full max-w-md p-16 relative text-center max-h-screen scrollbar-custom">
           <button
             onClick={onClose}
             className="absolute top-4 right-4 text-gray-500 hover:text-black cursor-pointer"
