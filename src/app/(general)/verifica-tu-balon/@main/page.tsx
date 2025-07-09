@@ -13,6 +13,7 @@ import ErrorModal from "../components/ErrorModal";
 import { getParsedDevice } from "../utils/getParsedDevice";
 import SecurityButton from "../components/SecurityButton";
 import { getPublicIP } from "../utils/getPublicIP";
+import { getCaptchaToken } from "@/utils/recaptcha";
 
 const schema = z.object({
   codigo: z
@@ -63,13 +64,14 @@ export default function VerificaTuBalon() {
 
   const onSubmit = async (data: FormData) => {
     setIsLoading(true); // ⬅️ Activamos loader
-    /* REAL */
-    const ipOrigen = await getPublicIP();
     try {
+      const ipOrigen = await getPublicIP();
+      const token = await getCaptchaToken();
       const payload = {
         code: data.codigo,
         dispositivo: getParsedDevice(),
         ip_origen: ipOrigen,
+        q_recaptcha: token,
       };
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_APP_API}/seal/verify`,
@@ -77,7 +79,6 @@ export default function VerificaTuBalon() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "X-SOLGAS-TOKEN": process.env.NEXT_PUBLIC_SOLGAS_TOKEN || "",
           },
           body: JSON.stringify(payload),
         }

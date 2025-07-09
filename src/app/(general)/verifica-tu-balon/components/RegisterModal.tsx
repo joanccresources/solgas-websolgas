@@ -1,4 +1,3 @@
-// src/app/(general)/verifica-tu-balon/components/RegisterModal.tsx
 "use client";
 
 import { Dialog } from "@radix-ui/react-dialog";
@@ -12,13 +11,12 @@ import ErrorModal from "./ErrorModal";
 import FullScreenLoader from "./FullScreenLoader";
 import { getParsedDevice } from "../utils/getParsedDevice";
 import { getPublicIP } from "../utils/getPublicIP";
+import { getCaptchaToken } from "@/utils/recaptcha";
 
 const schema = z.object({
   nombre: z.string().min(4, "Campo requerido"),
   dni: z.string().min(8, "DNI inválido"),
   telefono: z.string().min(9, "Teléfono inválido"),
-  // email: z.string().email("Correo inválido"),
-  // direccion: z.string().min(4, "Campo requerido"),
   email: z
     .string()
     .optional()
@@ -68,6 +66,7 @@ export default function RegisterModal({ onClose }: { onClose: () => void }) {
         return;
       }
       const ipOrigen = await getPublicIP();
+      const token = await getCaptchaToken();
       const payload = {
         nombres_apellidos: data.nombre,
         documento_identidad: data.dni,
@@ -81,6 +80,7 @@ export default function RegisterModal({ onClose }: { onClose: () => void }) {
         status_validacion: verification.status,
         id_log: verification.id_log,
         ip_origen: ipOrigen,
+        q_recaptcha: token,
       };
 
       const res = await fetch(
@@ -89,7 +89,6 @@ export default function RegisterModal({ onClose }: { onClose: () => void }) {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "X-SOLGAS-TOKEN": process.env.NEXT_PUBLIC_SOLGAS_TOKEN || "",
           },
           body: JSON.stringify(payload),
         }
