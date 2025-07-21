@@ -5,14 +5,14 @@ import Container from "@/components/layouts/container";
 
 export async function generateMetadata() {
   const { data } = await getData();
-  const result = metadata(); 
+  const result = metadata();
   const {
     name = "Inicio",
     seo_description = "",
     seo_keywords = "",
     seo_image_format = "",
-    path = ''
-  } = data.page; 
+    path = "",
+  } = data.page;
   return {
     ...result,
     title: name,
@@ -32,21 +32,22 @@ export async function generateMetadata() {
   };
 }
 
-
 export default function Home({
   map,
   categories,
-  info,
-  banner
+  // info,
+  banner,
+  balon,
 }: {
   map: React.ReactNode;
   categories: React.ReactNode;
   info: React.ReactNode;
   banner: React.ReactNode;
-}) { 
+  balon: React.ReactNode;
+}) {
   return (
     <>
-       {banner}
+      {banner}
       <div className="md:pt-16 pt-8 grid lg:gap-y-20 md:gap-y-16 gap-y-8">
         <div id="productos-y-servicios">
           <Container className="container sm:mx-auto grid lg:gap-y-20 md:gap-y-16 gap-y-8">
@@ -55,7 +56,8 @@ export default function Home({
           </Container>
         </div>
         <div id="encuentra-tu-distribuidor-mas-cercano">{map}</div>
-        <div id="experta-a-solgas">{info}</div>
+        {/* <div id="experta-a-solgas">{info}</div> */}
+        <div id="verifica-tu-balon">{balon}</div>
       </div>
     </>
   );
