@@ -9,8 +9,8 @@ import { useState } from "react";
 import SuccessModal from "./SuccessModal";
 import ErrorModal from "./ErrorModal";
 import FullScreenLoader from "./FullScreenLoader";
-import { getParsedDevice } from "../utils/getParsedDevice";
-import { getPublicIP } from "../utils/getPublicIP";
+import { getParsedDevice } from "../_utils/getParsedDevice";
+import { getPublicIP } from "../_utils/getPublicIP";
 import { getCaptchaToken } from "@/utils/recaptcha";
 
 const schema = z.object({
@@ -130,7 +130,14 @@ export default function RegisterModal({ onClose }: { onClose: () => void }) {
           setShowSuccess(false);
           onClose();
         }}
-      />
+      >
+        <p className="text-base text-primary-blue font-clan-pro-regular">
+          Te mantendremos al tanto de las <br />
+          <strong className="text-primary-blue">
+            promociones exclusivas de Solgas.
+          </strong>
+        </p>
+      </SuccessModal>
     );
 
   if (showError)

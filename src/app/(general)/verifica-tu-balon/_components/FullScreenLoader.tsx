@@ -1,4 +1,3 @@
-// src\app\(general)\verifica-tu-balon\components\FullScreenLoader.tsx
 "use client";
 
 export default function FullScreenLoader() {

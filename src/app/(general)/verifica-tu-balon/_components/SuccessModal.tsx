@@ -1,12 +1,18 @@
 // src/app/(general)/verifica-tu-balon/components/SuccessModal.tsx
 "use client";
 
+import { ReactNode } from "react";
 import { Dialog } from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
 import Image from "next/image";
 import SecurityButton from "./SecurityButton";
 
-export default function SuccessModal({ onClose }: { onClose: () => void }) {
+type Props = {
+  onClose: () => void;
+  children: ReactNode;
+};
+
+export default function SuccessModal({ onClose, children }: Props) {
   return (
     <Dialog open onOpenChange={onClose}>
       <div className="fixed inset-0 bg-black/50 z-[999] flex items-center justify-center px-4 backdrop-blur-[6px]">
@@ -30,13 +36,7 @@ export default function SuccessModal({ onClose }: { onClose: () => void }) {
           <h2 className="text-2xl font-clan-pro-bold text-primary-orange mb-2">
             ¡Gracias!
           </h2>
-          <p className="text-base text-primary-blue font-clan-pro-regular">
-            Te mantendremos al tanto de las <br />
-            <strong className="text-primary-blue">
-              promociones exclusivas de Solgas.
-            </strong>
-          </p>
-
+          {children}
           <div className="absolute -bottom-3.5 w-full left-0 right-0">
             <SecurityButton />
           </div>

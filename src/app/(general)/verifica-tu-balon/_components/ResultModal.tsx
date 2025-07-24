@@ -10,6 +10,7 @@ interface Props {
   onClose: () => void;
   onRegisterClick: () => void;
   onRetry?: () => void; //
+  onReport?: () => void; // Función para manejar el reporte de caso
 }
 
 const contentMap = {
@@ -28,14 +29,18 @@ const contentMap = {
     emojiUrl: "/verifica-tu-balon/emoji-balon-original.svg",
   },
   "no-original": {
-    titulo: "VALIDACIÓN INCORRECTA",
+    titulo: "TU CÓDIGO NO EXISTE",
     subtitulo: (
       <>
-        <p className="font-clan-pro-medium text-primary-blue sm:w-[504px] mx-auto">
+        {/* <p className="font-clan-pro-medium text-primary-blue sm:w-[504px] mx-auto">
           Este código{" "}
           <span className="font-clan-pro-bold-italic">
             no se encuentra registrado en nuestras plantas.
           </span>
+        </p> */}
+        <p className="font-clan-pro-medium text-primary-blue sm:w-[504px] mx-auto">
+          ¡Tu balón podría{" "}
+          <span className="font-clan-pro-bold-italic">ser bamba!</span>
         </p>
       </>
     ),
@@ -62,6 +67,7 @@ export default function ResultModal({
   onClose,
   onRegisterClick,
   onRetry,
+  onReport,
 }: Props) {
   const content = contentMap[tipo];
 
@@ -161,12 +167,20 @@ export default function ResultModal({
 
             {/* ✅ Botón de VALIDAR OTRO CÓDIGO si no es original y se pasó onRetry */}
             {tipo !== "original" && onRetry && (
-              <button
-                onClick={onRetry}
-                className="bg-[#E5E5E5] px-10 py-2 rounded-md | text-xs md:text-[13px] | hover:bg-gray-300 transition cursor-pointer mt-6 text-primary-blue font-clan-pro-medium"
-              >
-                VALIDAR OTRO CÓDIGO
-              </button>
+              <div className="mt-6 | mx-8 lg:mx-0 | flex lg:items-center lg:justify-center | gap-3 lg:gap-4.5 | flex-col lg:flex-row">
+                <button
+                  onClick={onRetry}
+                  className="bg-[#E5E5E5] px-10 | lg:py-2.5 py-2 | rounded-md | text-xs md:text-[13px] | hover:bg-gray-300 transition cursor-pointer text-primary-blue font-clan-pro-medium"
+                >
+                  VALIDAR OTRO CÓDIGO
+                </button>
+                <button
+                  onClick={onReport}
+                  className="bg-primary-orange px-10 | lg:py-2.5 py-2 | rounded-md | text-xs md:text-[13px] | hover:bg-[#e56c00] transition cursor-pointer text-white font-clan-pro-medium"
+                >
+                  REGISTRA TU CASO
+                </button>
+              </div>
             )}
           </div>
           <div className="bg-gradient-to-r from-[#FF7900] to-[#082265] text-white py-7 | px-5 sm:px-0 | mt-auto rounded-bl-[35px] rounded-br-[35px]">
@@ -179,7 +193,7 @@ export default function ResultModal({
               </p>
               <button
                 onClick={onRegisterClick}
-                className="bg-primary-orange | text-[15px] sm:text-[22px] | text-white cursor-pointer transition | h-8.5 sm:h-[59px] | w-[85px] sm:w-[145px] |  max-w-full | rounded-[50px] | font-clan-pro-black | inline-flex items-center justify-center flex-none | leading-none"
+                className="bg-primary-orange | text-[15px] sm:text-[22px] | text-white cursor-pointer transition | h-8.5 sm:h-[59px] | w-[85px] sm:w-[145px] |  max-w-full | rounded-[50px] | font-clan-pro-black | inline-flex items-center justify-center flex-none | leading-none | hover:bg-[#e56c00] | duration-300"
               >
                 AQUÍ
               </button>
