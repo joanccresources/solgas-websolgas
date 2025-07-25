@@ -4,12 +4,12 @@ import Link from "next/link";
 
 export default function BannerBalon() {
   return (
-    <>      
+    <>
       <div className="lg:mt-16 md:-mt-4 -mt-12 | mb-16 | relative | flex justify-center | md:mx-32 mx-4 | 2xl:h-[340px] lg:h-[331px] h-[142px] | overflow-x-hidden | md:rounded-[50px] rounded-[24px]">
         <div className="absolute lg:relative | right-0 bottom-0 | 2xl:h-[340px] lg:h-[331px] h-[142px] | 2xl:w-[522px] lg:w-[508px] w-[164px]">
           {/* Desktop */}
           <Image
-            src="/home/home-main-image-verifica-tu-balon.webp"
+            src="/home/home-main-image-verifica-tu-balon--v2.webp"
             alt="Banner"
             sizes="(min-width: 1536px) 522px, (min-width: 1024px) 508px, (min-width: 768px) 350px, 300px"
             fill
@@ -19,7 +19,7 @@ export default function BannerBalon() {
           />
           {/* Mobile */}
           <Image
-            src="/home/home-main-image-verifica-tu-balon-mobile.webp"
+            src="/home/home-main-image-verifica-tu-balon-mobile--v2.webp"
             alt="Banner"
             sizes="164px"
             fill
